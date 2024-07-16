@@ -42,6 +42,20 @@
 
 .header__middle {
   padding: 20px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.brandLogo img{
+  object-fit: cover;
+  height: 4rem;
+  width: auto;
+}
+
+.brandLogoMobile img{
+ display: none;
 }
 
 .logo h1 a span {
@@ -67,10 +81,19 @@
   color: #000d6b;
 }
 
+.header__location{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .header__location-content h4 {
   font-size: 1.2rem;
   font-weight: 700;
   color: #000d6b;
+  margin-top: 8px;
 }
 
 .header__location-content h6 {
@@ -203,4 +226,35 @@
   .menu__active {
     display: block;
   }
+}
+
+
+@media screen and (max-width: 1176px){
+    .brandLogo img{
+     height: 3rem;
+    }
+
+    .header__location-content h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #000d6b;
+  }
+  .header__btn a{
+    font-size: 0.8rem;
+   }
+  
+.brandLogoMobile img{
+  display: none;
+ }
+}
+
+@media screen and (max-width: 766px){
+  .brandLogoMobile img{
+    display: block;
+    object-fit: cover;
+    height: 3rem;
+    width: auto;
+   }
+
+   
 }
