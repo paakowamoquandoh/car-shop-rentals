@@ -5,30 +5,30 @@ const CarSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  type: {
+  condition: {
     type: String,
     required: true,
   },
-  city: {
+  model: {
     type: String,
     required: true,
   },
-  address: {
+  year: {
     type: String,
     required: true,
   },
-  distance: {
+  mileage: {
     type: String,
     required: true,
   },
   photos: {
     type: [String],
   },
-  title: {
+  engine: {
     type: String,
     required: true,
   },
-  desc: {
+  transmission: {
     type: String,
     required: true,
   },
@@ -36,9 +36,6 @@ const CarSchema = new mongoose.Schema({
     type: Number,
     min: 0,
     max: 5,
-  },
-  rooms: {
-    type: [String],
   },
   cheapestPrice: {
     type: Number,
