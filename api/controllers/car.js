@@ -62,11 +62,11 @@ export const getAllCars = async (req,res,next)=>{
 };
 
 export const countByYear = async (req, res, next) => {
-    const cities = req.query.cities.split(",");
+    const years = req.query.years.split(",");
     try {
       const list = await Promise.all(
-        cities.map((city) => {
-          return Car.countDocuments({ city: city });
+        years.map((year) => {
+          return Car.countDocuments({ year: year });
         })
       );
       res.status(200).json(list);
@@ -75,20 +75,20 @@ export const countByYear = async (req, res, next) => {
     }
   };
 
-  export const countByModel = async (req, res, next) => {
+  export const countByType = async (req, res, next) => {
     try {
-      const carCount = await Car.countDocuments({ type: "Honda" });
-      const apartmentCount = await Car.countDocuments({ type: "Toyota" });
-      const resortCount = await Car.countDocuments({ type: "BMW" });
-      const villaCount = await Car.countDocuments({ type: "Nissan" });
-      const cabinCount = await Car.countDocuments({ type: "Others" });
+      const sedanCount = await Car.countDocuments({ type: "Sedans" });
+      const SUVCount = await Car.countDocuments({ type: "SUVs" });
+      const truckCount = await Car.countDocuments({ type: "Trucks" });
+      const coupeCount = await Car.countDocuments({ type: "Coupes" });
+      const othersCount = await Car.countDocuments({ type: "Others" });
   
       res.status(200).json([
-        { type: "hotel", count: carCount },
-        { type: "apartments", count: apartmentCount },
-        { type: "resorts", count: resortCount },
-        { type: "villas", count: villaCount },
-        { type: "cabins", count: cabinCount },
+        { type: "Sedans", count: sedanCount },
+        { type: "SUVs", count: SUVCount },
+        { type: "Trucks", count: truckCount },
+        { type: "Coupes", count: coupeCount },
+        { type: "Ohters", count: othersCount },
       ]);
     } catch (err) {
       next(err);

@@ -5,8 +5,8 @@ import authRoute from "./routes/auth.js";
 import clientsRoute from "./routes/clients.js";
 import carslistRoute from "./routes/carslist.js";
 import carrentalsRoute from "./routes/carrentals.js";
-// import cookieParser from "cookie-parser";
-// import cors from "cors";
+import cookieParser from "cookie-parser";
+import cors from "cors";
 
 const app = express();
 dotenv.config();
@@ -25,19 +25,19 @@ const connect = async () => {
 // });  
 
 //middlewares
-// app.use(cookieParser())
-// const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
+app.use(cookieParser())
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
 
-// app.use(cors({
-//   origin: (origin, callback) => {
-//     if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error('Not allowed by CORS'));
-//     }
-//   },
-//   credentials: true,
-// }));
+app.use(cors({
+  origin: (origin, callback) => {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+}));
 
 app.use(express.json());
 

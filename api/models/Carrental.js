@@ -1,12 +1,20 @@
 import mongoose from "mongoose";
-const RentalSchema = new mongoose.Schema(
+const CarRentalSchema = new mongoose.Schema(
   {
-    title: {
+    model: {
       type: String,
       required: true,
     },
-    price: {
+    transmission: {
+      type: String,
+      required: true,
+    },
+    pricePerDay: {
       type: Number,
+      required: true,
+    },
+    fuelPolicy: {
+      type: String,
       required: true,
     },
     maxPeople: {
@@ -17,9 +25,9 @@ const RentalSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    roomNumbers: [{ number: Number, unavailableDates: {type: [Date]}}],
+    rentalNumbers: [{ number: Number, unavailableDates: {type: [Date]}}],
   },
   { timestamps: true }
 );
 
-export default mongoose.model("Room", RentalSchema);
+export default mongoose.model("Room", CarRentalSchema);
