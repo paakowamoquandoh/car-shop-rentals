@@ -9,13 +9,22 @@ import HeroSlider from "../components/UI/HeroSlider";
 import driveImg from "../assets/all-images/drive.jpg";
 import OurMembers from "../components/UI/OurMembers";
 import "../styles/about.css";
+import CarTypes from "../components/UI/CarTypes";
 
 const Home = () => {
   return (
     <Helmet title="About">
      {/* ============= hero section =========== */}
-     <section className="p-0 hero__slider-section">
+     <span className="p-0 hero__slider-section">
         <HeroSlider />
+      </span>
+        {/* =============== blog section =========== */}
+        <section>
+        <Container>
+          <Row>
+            <CarTypes />
+          </Row>
+        </Container>
       </section>
       <AboutSection aboutClass="aboutPage" />
 
