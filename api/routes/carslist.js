@@ -16,7 +16,7 @@ router.get("/find/:id", getCar);
 //GET ALL
 router.get("/", getAllCars)
 router.get("/countByYear", countByYear)
-router.get("/countByModel", countByType);
+router.get("/countByType", countByType);
 router.get("/car/:id", getCarRentals);
 
 

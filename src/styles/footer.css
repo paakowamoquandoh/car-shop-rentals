@@ -43,6 +43,7 @@
 .office__info {
   color: rgba(255, 255, 255, 0.715);
   font-weight: 300;
+  font-size: small;
 }
 
 .newsletter {

@@ -61,12 +61,12 @@ export const getAllCars = async (req,res,next)=>{
   }
 };
 
-export const countByYear = async (req, res, next) => {
-    const years = req.query.years.split(",");
+export const countByType = async (req, res, next) => {
+    const types = req.query.types.split(",");
     try {
       const list = await Promise.all(
-        years.map((year) => {
-          return Car.countDocuments({ year: year });
+        types.map((type) => {
+          return Car.countDocuments({ type: type });
         })
       );
       res.status(200).json(list);
@@ -75,20 +75,20 @@ export const countByYear = async (req, res, next) => {
     }
   };
 
-  export const countByType = async (req, res, next) => {
+  export const countByYear = async (req, res, next) => {
     try {
-      const sedanCount = await Car.countDocuments({ type: "Sedans" });
-      const SUVCount = await Car.countDocuments({ type: "SUVs" });
-      const truckCount = await Car.countDocuments({ type: "Trucks" });
-      const coupeCount = await Car.countDocuments({ type: "Coupes" });
-      const othersCount = await Car.countDocuments({ type: "Others" });
+      const newModelsCount = await Car.countDocuments({ type: "New Models" });
+      const recentModelsCount = await Car.countDocuments({ type: "Recent Models" });
+      const oldModelsCount = await Car.countDocuments({ type: "Old Models" });
+      const classicModelsCount = await Car.countDocuments({ type: "Classic Models" });
+      const vintageModelsCount = await Car.countDocuments({ type: "Vintage Models" });
   
       res.status(200).json([
-        { type: "Sedans", count: sedanCount },
-        { type: "SUVs", count: SUVCount },
-        { type: "Trucks", count: truckCount },
-        { type: "Coupes", count: coupeCount },
-        { type: "Ohters", count: othersCount },
+        { type: "New Models", count: newModelsCount },
+        { type: "Recent Models", count: recentModelsCount },
+        { type: "Old Models", count: oldModelsCount },
+        { type: "Classic Models", count: classicModelsCount },
+        { type: "Vintage Models", count: vintageModelsCount },
       ]);
     } catch (err) {
       next(err);
