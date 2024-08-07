@@ -83,7 +83,6 @@ export const countByType = async (req, res, next) => {
       const nissanCount = await Car.countDocuments({ model: "Nissan" });
       const benzCount = await Car.countDocuments({ model: "Benz" });
       const BMWCount = await Car.countDocuments({ model: "BMW" });
-      const volkswagenCount = await Car.countDocuments({ model: "VolksWagen" });
       const kiaCount = await Car.countDocuments({ model: "Kia" });
       const fordCount = await Car.countDocuments({ model: "Ford" });
       const otherModelsCount = await Car.countDocuments({ model: "Other" });
@@ -95,7 +94,6 @@ export const countByType = async (req, res, next) => {
         { model: "Nissan", count: nissanCount },
         { model: "Benz", count: benzCount },
         { model: "BMW", count: BMWCount },
-        { model: "VolksWagen", count: volkswagenCount },
         { model: "Kia", count: kiaCount },
         { model: "Ford", count: fordCount },
         { model: "Other", count: otherModelsCount },

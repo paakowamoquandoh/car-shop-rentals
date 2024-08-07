@@ -52,7 +52,7 @@ ul {
 }
 
 .section__subtitle {
-  color: #f9a826;
+  color: gold;
   font-weight: 600;
   font-size: 1.2rem;
 }
@@ -64,7 +64,7 @@ ul {
 }
 
 section {
-  padding: 20px 0px;
+  padding: 40px 0px;
 }
 
 .btn {

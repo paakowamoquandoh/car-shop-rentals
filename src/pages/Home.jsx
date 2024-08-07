@@ -10,6 +10,7 @@ import driveImg from "../assets/all-images/drive.jpg";
 import OurMembers from "../components/UI/OurMembers";
 import "../styles/about.css";
 import CarTypes from "../components/UI/CarTypes";
+import MySwiper from "../components/Swiper/MySwiper";
 
 const Home = () => {
   return (
@@ -31,6 +32,18 @@ const Home = () => {
         </Container>
       </section>
       <AboutSection aboutClass="aboutPage" />
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12" className="mb-5 text-center">
+              <h6 className="section__subtitle">Wealth NoveltyS</h6>
+              <h2 className="section__title">Car Models</h2>
+            </Col>
+            <MySwiper />
+          </Row>
+        </Container>
+      </section>
 
       <section className="about__page-section">
         <Container>
@@ -76,19 +89,20 @@ const Home = () => {
           </Row>
         </Container>
       </section>
+
+      <BecomeDriverSection />
+
       <section>
         <Container>
           <Row>
             <Col lg="12" className="mb-5 text-center">
-              <h4 className="section__title">Browse By Year</h4>
+              <h6 className="section__subtitle">Experts</h6>
+              <h2 className="section__title">Our Members</h2>
             </Col>
             <OurMembers />
           </Row>
         </Container>
       </section>
-      <BecomeDriverSection />
-
-     
     </Helmet>
   );
 };

@@ -12,18 +12,18 @@
 }
 
 .read__more {
-  color: #f9a826;
+  color:blue;
   font-weight: 600;
   text-decoration: none;
   font-size: 1rem;
 }
 
 .read__more:hover {
-  color: #f9a826;
+  color:blue;
 }
 
 .blog__time span i {
-  color: #f9a826;
+  color:blue;
 }
 
 .blog__author {
