@@ -2,35 +2,50 @@ import React from "react";
 import { Col } from "reactstrap";
 import "../../styles/carTypes.css";
 import { Link } from "react-router-dom";
-import blogData from "../../assets/data/blogData";
+import useFetch from "../../hooks/useFetch";
+import sedanImg from "";
+import suvImg from "";
+import otherImg from "";
 
 const CarTypes = () => {
+  const { data, loading, error } = useFetch(
+    "http://localhost:8800/api/carslist/countByType?types=sedan,suv,others"
+  );
+  console.log(data);
   return (
     <>
-      {blogData.map((item) => (
-        <BlogItem item={item} key={item.id} />
-      ))}
+      <CarItem
+        imgUrl={sedanImg}
+        title="Sedans"
+        quantity={data[0]}
+      />
+      <CarItem
+        imgUrl={suvImg}
+        title="SUVs"
+        quantity={data[1]}
+      />
+      <CarItem
+        imgUrl={otherImg}
+        title="Others"
+        quantity={data[2]}
+      />
     </>
   );
 };
 
-const BlogItem = ({ item }) => {
-  const { imgUrl, title, author, date, description, time } = item;
-
+const CarItem = ({ imgUrl, title, quantity }) => {
   return (
     <Col lg="4" md="6" sm="6" className="mb-5 flex">
       <div className="blog__item">
-        <img src={imgUrl} alt="" className="w-100" />
+        <img src={imgUrl} alt={title} className="w-100" />
         <div className="blog__info p-3">
-          
           <span className="blog__author">
-              25 {author} Cars
-            </span>
-
+           {quantity} {title} Cars
+          </span>
           <div className="blog__time pt-3 mt-3 d-flex align-items-center justify-content-between">
-          <Link to={`/blogs/${title}`} className="read__more">
-            View More
-          </Link>
+            <Link to={`/cars`} className="read__more">
+              View More
+            </Link>
           </div>
         </div>
       </div>
