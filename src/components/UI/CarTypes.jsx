@@ -22,9 +22,9 @@ const CarTypes = () => {
 
   return (
     <>
-      <CarItem imgUrl={sedanImg} title="Sedans" quantity={data[0]} />
+      <CarItem imgUrl={sedanImg} title="Sedans/Saloon" quantity={data[0]} />
       <CarItem imgUrl={suvImg} title="SUVs" quantity={data[1]} />
-      <CarItem imgUrl={otherImg} title="Other" quantity={data[2]} />
+      <CarItem imgUrl={otherImg} title="Others" quantity={data[2]} />
     </>
   );
 };
@@ -35,7 +35,7 @@ const CarItem = ({ imgUrl, title, quantity }) => {
         <img src={imgUrl} alt={title} className="w-100" />
         <div className="blog__info p-3">
           <span className="blog__author">
-           {quantity} {title} Cars
+           {quantity} {title}
           </span>
           <div className="blog__time pt-3 mt-3 d-flex align-items-center justify-content-between">
             <Link to={`/cars`} className="read__more">

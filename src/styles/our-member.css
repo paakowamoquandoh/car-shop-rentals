@@ -45,9 +45,121 @@
 
 .single__member-img img {
   border-radius: 4px;
+  width: 100%;
+  height: 11rem;
+
 }
 
 .single__member-img:hover .single__member-social {
   top: 0;
   opacity: 1;
+}
+
+.pagination{
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  border: 1px solid green;
+  display: flex;
+  width: 75.9375rem;
+  padding: 2rem 28.5625rem;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  border: 1px solid #D8D8D8;
+  background: #F0F0F0;
+}
+
+
+.pagination button{
+  display: flex;
+padding: 0.375rem 0.625rem;
+flex-direction: column;
+align-items: flex-start;
+gap: 0.625rem;
+border-radius: 2.75rem;
+border: 2px solid var(--primary,  #000d6b);
+background: transparent;
+}
+
+.pagination .arrows{
+  border: none;
+  background: transparent;
+  color:  #000d6b;
+}
+
+.pagination button.active {
+  background-color:  #000d6b; /* Change this to your desired background color */
+  color: white; /* Change this to your desired text color */
+}
+
+.rating{
+  font-weight: bold;
+  margin: 4px;
+  font-size: 10.5px;
+  color: gold; /* Set the text color to white */
+}
+
+.price{
+  margin-bottom: -0.4rem;
+  color: teal;
+  font-weight: bold;
+}
+
+.icon-fill{
+  color: gold;
+  fill: gold;
+  width: 1.2rem;
+}
+
+
+@media screen and (max-width: 550px) {
+  .filterContainer .filters{
+    display: none;
+}
+
+.filterContainer .products{
+  width: 100%;   
+  height: auto;
+}
+
+.filterContainer{
+height: auto;
+margin: 0;
+}
+.pagination{
+display: flex;
+width: 100%;
+justify-content: center;
+align-items: center;
+gap: 1.9375rem;
+padding: 0;
+background: none;
+border: none;
+outline: none;
+}
+}
+
+@media screen and (max-width: 850px) {
+  .checkInputs{
+    width: 9.6rem;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .checkInputs{
+    width: 11.2rem;
+  }
+
+  .filterContainer{
+    margin: 0;
+    height: auto;
+  }
+
+  .pagination{
+    width: auto;
+    padding: 0;
+    background: none;
+    border: none;
+  }
 }
