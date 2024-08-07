@@ -18,47 +18,39 @@ import useFetch from "../../hooks/useFetch";
 
 const MySwiper = () => {
   const { data, loading, error } = useFetch(
-    'http://localhost:8800/api/carslist/countByModel'
+    "http://localhost:8800/api/carslist/countByModel"
   );
 
-  if (loading) {
-    return <p>Loading, please wait...</p>;
-  }
+  const images = [
+    toyota,
+    honda,
+    hyundai,
+    nissan,
+    benz,
+    bmw,
+    kia,
+    ford,
+    other,
+  ];
 
-  if (error) {
-    return <p>Error loading data</p>;
-  }
   return (
     <div className="swiperContainer">
-      <Swiper>
-        <SwiperSlide>
-          <CarCards imageUrl={toyota} cardText="you" cardType="me" />
-        </SwiperSlide>
-        <SwiperSlide>
-        <CarCards imageUrl={honda} cardText="Honda Models"  />
-        </SwiperSlide>
-        <SwiperSlide>
-        <CarCards imageUrl={hyundai} cardText="Hyundai Models"  />
-        </SwiperSlide>
-        <SwiperSlide>
-        <CarCards imageUrl={nissan} cardText="Nissan Models"  />
-        </SwiperSlide>
-        <SwiperSlide>
-        <CarCards imageUrl={benz} cardText="Benz Models"  />
-        </SwiperSlide>
-        <SwiperSlide>
-        <CarCards imageUrl={bmw} cardText="BMW Models"  />
-        </SwiperSlide>
-        <SwiperSlide>
-        <CarCards imageUrl={ford} cardText="FORD Models"  />
-        </SwiperSlide>
-        <SwiperSlide>
-        <CarCards imageUrl={kia} cardText="KIA Models"  />
-        </SwiperSlide>
-        <SwiperSlide>
-        <CarCards imageUrl={other} cardText="Other Models"  />
-        </SwiperSlide>
-      </Swiper>
+      {loading ? (
+        "Loading, please wait..."
+      ) : (
+        <Swiper>
+          {data &&
+            images.map((img, i) => (
+              <SwiperSlide key={i}>
+                <CarCards 
+                  imageUrl={img} 
+                  cardText={`${data[i]?.count}`} 
+                  cardType={data[i]?.model} 
+                />
+              </SwiperSlide>
+            ))}
+        </Swiper>
+      )}
     </div>
   );
 };

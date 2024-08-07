@@ -1,15 +1,15 @@
 import React from "react";
 import "./swiper.css";
 
-const CarCards = (props) => {
+const CarCards = ({ imageUrl, cardText, cardType }) => {
   return (
     <div className="card-container">
       <div className="card-image">
-        <img src={props.imageUrl} alt="Card Background" />
+        <img src={imageUrl} alt="Card Background" />
       </div>
       <div className="card-content">
-      <h3>{props.cardText}</h3>
-      <h5>{props.cardType} Cars</h5>
+      <h3>{cardText}</h3>
+      <h5>{cardType} Cars</h5>
       </div>
     </div>
   );

@@ -18,6 +18,6 @@ router.get("/", getAllCars)
 router.get("/countByModel", countByModel)
 router.get("/countByType", countByType);
 router.get("/car/:id", getCarRentals);
-
+ 
 
 export default router; 
