@@ -3,9 +3,9 @@ import { Col } from "reactstrap";
 import "../../styles/carTypes.css";
 import { Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
-import sedanImg from "";
-import suvImg from "";
-import otherImg from "";
+import sedanImg from "../../assets/media/types/sedans.jpg";
+import suvImg from "../../assets/media/types/suv.jpg";
+import otherImg from "../../assets/media/types/others.jpg";
 
 const CarTypes = () => {
   const { data, loading, error } = useFetch(
@@ -26,7 +26,7 @@ const CarTypes = () => {
       />
       <CarItem
         imgUrl={otherImg}
-        title="Others"
+        title="Other"
         quantity={data[2]}
       />
     </>

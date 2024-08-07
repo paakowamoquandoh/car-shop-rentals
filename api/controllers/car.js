@@ -75,20 +75,30 @@ export const countByType = async (req, res, next) => {
     }
   };
 
-  export const countByYear = async (req, res, next) => {
+  export const countByModel = async (req, res, next) => {
     try {
-      const newModelsCount = await Car.countDocuments({ type: "New Models" });
-      const recentModelsCount = await Car.countDocuments({ type: "Recent Models" });
-      const oldModelsCount = await Car.countDocuments({ type: "Old Models" });
-      const classicModelsCount = await Car.countDocuments({ type: "Classic Models" });
-      const vintageModelsCount = await Car.countDocuments({ type: "Vintage Models" });
+      const toyotaCount = await Car.countDocuments({ model: "Toyota" });
+      const hondaCount = await Car.countDocuments({ model: "Honda" });
+      const hyundaiCount = await Car.countDocuments({ model: "Hyundai" });
+      const nissanCount = await Car.countDocuments({ model: "Nissan" });
+      const benzCount = await Car.countDocuments({ model: "Benz" });
+      const BMWCount = await Car.countDocuments({ model: "BMW" });
+      const volkswagenCount = await Car.countDocuments({ model: "VolksWagen" });
+      const kiaCount = await Car.countDocuments({ model: "Kia" });
+      const fordCount = await Car.countDocuments({ model: "Ford" });
+      const otherModelsCount = await Car.countDocuments({ model: "Other" });
   
       res.status(200).json([
-        { type: "New Models", count: newModelsCount },
-        { type: "Recent Models", count: recentModelsCount },
-        { type: "Old Models", count: oldModelsCount },
-        { type: "Classic Models", count: classicModelsCount },
-        { type: "Vintage Models", count: vintageModelsCount },
+        { model: "Toyota", count: toyotaCount },
+        { model: "Honda", count: hondaCount },
+        { model: "Hyundai", count: hyundaiCount },
+        { model: "Nissan", count: nissanCount },
+        { model: "Benz", count: benzCount },
+        { model: "BMW", count: BMWCount },
+        { model: "VolksWagen", count: volkswagenCount },
+        { model: "Kia", count: kiaCount },
+        { model: "Ford", count: fordCount },
+        { model: "Other", count: otherModelsCount },
       ]);
     } catch (err) {
       next(err);

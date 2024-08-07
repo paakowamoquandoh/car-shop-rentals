@@ -1,6 +1,6 @@
 import express from "express";
 import { createError } from "../utils/error.js";
-import { countByType, countByYear, createCar, deleteCar, getAllCars, getCar, getCarRentals, updateCar } from "../controllers/car.js";
+import { countByModel, countByType, createCar, deleteCar, getAllCars, getCar, getCarRentals, updateCar } from "../controllers/car.js";
 import {verifyAdmin} from "../utils/verifyToken.js";
 
 const router = express.Router();
@@ -15,7 +15,7 @@ router.delete("/:id", verifyAdmin, deleteCar)
 router.get("/find/:id", getCar);
 //GET ALL
 router.get("/", getAllCars)
-router.get("/countByYear", countByYear)
+router.get("/countByModel", countByModel)
 router.get("/countByType", countByType);
 router.get("/car/:id", getCarRentals);
 

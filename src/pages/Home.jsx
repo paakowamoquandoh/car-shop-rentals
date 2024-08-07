@@ -22,6 +22,10 @@ const Home = () => {
         <section>
         <Container>
           <Row>
+          <Col lg="12" className="mb-5 text-center">
+              <h6 className="section__subtitle">Explore our Car Shop</h6>
+              <h2 className="section__title">In Stock</h2>
+            </Col>
             <CarTypes />
           </Row>
         </Container>
@@ -72,20 +76,19 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-
-      <BecomeDriverSection />
-
       <section>
         <Container>
           <Row>
             <Col lg="12" className="mb-5 text-center">
-              <h6 className="section__subtitle">Experts</h6>
-              <h2 className="section__title">Our Members</h2>
+              <h4 className="section__title">Browse By Year</h4>
             </Col>
             <OurMembers />
           </Row>
         </Container>
       </section>
+      <BecomeDriverSection />
+
+     
     </Helmet>
   );
 };

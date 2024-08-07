@@ -20,9 +20,9 @@ const connect = async () => {
   }
 };
 
-// mongoose.connection.on("disconnected", () => {
-//   console.log("Wealth Novelty disconnected!");
-// });  
+mongoose.connection.on("disconnected", () => {
+  console.log("Wealth Novelty disconnected!");
+});  
 
 //middlewares
 app.use(cookieParser())
