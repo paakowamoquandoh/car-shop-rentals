@@ -1,6 +1,5 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css"; // Import Swiper styles
 import "./swiper.css";
 import toyota from "../../assets/media/models/toyota.jpg";
 import honda from "../../assets/media/models/honda.jpg";
