@@ -1,7 +1,6 @@
 import React from "react";
-
-import HeroSlider from "../components/UI/HeroSlider";
 import Helmet from "../components/Helmet/Helmet";
+import CommonSection from "../components/UI/CommonSection";
 
 import { Container, Row, Col } from "reactstrap";
 import FindCarForm from "../components/UI/FindCarForm";
@@ -11,32 +10,33 @@ import carData from "../assets/data/carData";
 import CarItem from "../components/UI/CarItem";
 import BecomeDriverSection from "../components/UI/BecomeDriverSection";
 import Testimonial from "../components/UI/Testimonial";
-
 import BlogList from "../components/UI/BlogList";
+import Booking from "../components/BookingForm/BookingForm";
 
 const Rental = () => {
   return (
     <Helmet title="Home">
       {/* ============= hero section =========== */}
       <section className="p-0 hero__slider-section">
-        <HeroSlider />
-
+      <CommonSection title="Rental" />
+        
         <div className="hero__form">
           <Container>
             <Row className="form__row">
-              <Col lg="4" md="4">
+              <Col lg="12" md="12">
                 <div className="find__cars-left">
                   <h2>Find your best car here</h2>
                 </div>
               </Col>
 
-              <Col lg="8" md="8" sm="12">
-                <FindCarForm />
+              <Col lg="12" md="12" sm="12">
+                <Booking/>
               </Col>
             </Row>
           </Container>
         </div>
       </section>
+      
       {/* =========== about section ================ */}
       <AboutSection />
       {/* ========== services section ============ */}
