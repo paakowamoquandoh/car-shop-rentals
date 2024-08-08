@@ -68,7 +68,7 @@ const Booking = ({ type }) => {
                 <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
                 <span
                   onClick={() => setOpenDate(!openDate)}
-                  className="headerSearchText"
+                  className="headerSearchText dateInput"
                 >{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
                   date[0].endDate,
                   "MM/dd/yyyy"

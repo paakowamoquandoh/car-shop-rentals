@@ -1,5 +1,5 @@
 .find__cars-left {
-  background: linear-gradient(rgba(255, 217, 0, 0.678), rgb(249, 168, 38, 0.9)),
+  background: linear-gradient(rgba(255, 217, 0, 0.678), rgba(249, 168, 38, 0.62)),
     url("../assets/media/carousel1.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -9,7 +9,8 @@
 
 .find__cars-left h2 {
   font-weight: 600;
-  font-size: 2.8rem;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .form__group {
@@ -55,8 +56,7 @@
 }
 
 .hero__form {
-  position: absolute;
-  bottom: -150px;
+  bottom: -100px;
   z-index: 11;
   width: 100%;
 }
@@ -83,11 +83,12 @@
 
 @media only screen and (max-width: 992px) {
   .find__cars-left {
-    padding: 65px 22px;
+    padding: 15px 22px;
   }
 
   .find__cars-left h2 {
     font-size: 1.5rem;
+    text-align: center;
   }
 
   .form {
