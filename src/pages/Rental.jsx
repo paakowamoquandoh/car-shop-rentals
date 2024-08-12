@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/CommonSection";
-
+import "../styles/find-car-form.css"
 import { Container, Row, Col } from "reactstrap";
 import FindCarForm from "../components/UI/FindCarForm";
 import AboutSection from "../components/UI/AboutSection";
@@ -23,7 +23,7 @@ const Rental = () => {
         <div className="hero__form">
           <Container>
             <Row className="form__row">
-              <Col lg="12" md="12">
+              <Col lg="12" md="12" sm="12">
                 <div className="find__cars-left">
                   <h2>Find your best car here</h2>
                 </div>
