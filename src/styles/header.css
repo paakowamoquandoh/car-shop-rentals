@@ -41,7 +41,7 @@
 /* ============ header middle style =========== */
 
 .header__middle {
-  padding: 14px 0px;
+  padding: 10px 0px;
   display: flex;
   flex-direction: row;
   justify-content: center;
