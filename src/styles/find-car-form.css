@@ -145,15 +145,11 @@
   }
 
   .hero__form {
-    bottom: -250px;
-    
+    width: auto;   
   }
 
   .form__row {
     display: flex;
     justify-content: center;
-    align-items: center;
-    border: 1px solid green;
-    width: 98vw;
   }
 }

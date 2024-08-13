@@ -48,7 +48,7 @@
 .headerSearch {
   height: 3.6rem;
   background-color: white;
-  border: 3px solid #5c5c5ca5;
+  border: 3px solid  #7c8a97;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -77,13 +77,15 @@
 }
 
 .headerSearchInput::placeholder {
-  color: #a9a9a9; 
+  color:  #7c8a97; 
   font-size: 1rem; 
   font-style: italic; 
 }
 
 .headerSearchText {
-  color: lightgray;
+  color:  #7c8a97; 
+  font-size: 1rem; 
+  font-style: italic;
   cursor: pointer;
 }
 
@@ -91,7 +93,6 @@
   position: absolute;
   top: 50px;
   z-index: 2;
-  border: 1px red solid;
 }
 
 .options {
@@ -163,7 +164,7 @@
   }
 
   .headerSearchInput, .dateInput, .headerSearchText {
-  border: 3px solid #5c5c5ca5;
+  border: 3px solid #7c8a978e;
   outline: none;
   padding: 10px;
   border-radius: 5px;
