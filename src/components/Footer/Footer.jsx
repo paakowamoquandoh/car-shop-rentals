@@ -7,8 +7,8 @@ import logo from "../../assets/media/logo.jpeg"
 
 const quickLinks = [
   {
-    path: "/about",
-    display: "About",
+    path: "/rental",
+    display: "Rental",
   },
 
   {
