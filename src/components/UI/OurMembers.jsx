@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/our-member.css";
 import { Col } from "reactstrap";
-import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Star } from "react-feather";
 import useFetch from "../../hooks/useFetch";
 
