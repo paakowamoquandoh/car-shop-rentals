@@ -7,7 +7,6 @@ import bmw from "../../assets/media/models/bmw.jpg";
 import hyundai from "../../assets/media/models/hyundai.jpg";
 import nissan from "../../assets/media/models/nissan.jpg";
 import benz from "../../assets/media/models/benz.jpg";
-// import vw from "../../assets/media/models/vw.jpg";
 import kia from "../../assets/media/models/kia.jpg";
 import ford from "../../assets/media/models/ford.jpg";
 import other from "../../assets/media/models/other.jpg";
@@ -16,7 +15,7 @@ import useFetch from "../../hooks/useFetch";
 
 
 const MySwiper = () => {
-  const { data, loading, error } = useFetch(
+  const { data, loading } = useFetch(
     "http://localhost:8800/api/carslist/countByModel"
   );
 
