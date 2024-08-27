@@ -1,5 +1,4 @@
 import express from "express";
-import { createError } from "../utils/error.js";
 import { countByModel, countByType, createCar, deleteCar, getAllCars, getCar, getCarRentals, updateCar } from "../controllers/car.js";
 import {verifyAdmin} from "../utils/verifyToken.js";
 
