@@ -1,4 +1,5 @@
 exports.handler = async function(event, context) {
+  
     const data = [
       { type: 'sedan', count: 10 },
       { type: 'suv', count: 15 },
