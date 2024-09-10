@@ -10,7 +10,7 @@ import otherImg from "../../assets/media/types/others.jpg";
 const CarTypes = () => {
   // Replace the local API call with the serverless function call
   const { data, loading, error } = useFetch(
-    '../../netlify/functions/carlist'  // Netlify serverless function URL
+    '../../netlify/functions/carlist.js'  // Netlify serverless function URL
   );
 
   if (loading) {
