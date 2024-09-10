@@ -8,8 +8,9 @@ import suvImg from "../../assets/media/types/suv.jpg";
 import otherImg from "../../assets/media/types/others.jpg";
 
 const CarTypes = () => {
+  // Replace the local API call with the serverless function call
   const { data, loading, error } = useFetch(
-    'http://localhost:8800/api/carslist/countByType?types=sedan,suv,others'
+    '../../netlify/functions/carlist'  // Netlify serverless function URL
   );
 
   if (loading) {
@@ -22,12 +23,13 @@ const CarTypes = () => {
 
   return (
     <>
-      <CarItem imgUrl={sedanImg} title="Sedans/Saloon" quantity={data[0]} />
-      <CarItem imgUrl={suvImg} title="SUVs" quantity={data[1]} />
-      <CarItem imgUrl={otherImg} title="Others" quantity={data[2]} />
+      <CarItem imgUrl={sedanImg} title="Sedans/Saloon" quantity={data[0].count} />
+      <CarItem imgUrl={suvImg} title="SUVs" quantity={data[1].count} />
+      <CarItem imgUrl={otherImg} title="Others" quantity={data[2].count} />
     </>
   );
 };
+
 const CarItem = ({ imgUrl, title, quantity }) => {
   return (
     <Col lg="4" md="6" sm="6" className="mb-5 flex">
