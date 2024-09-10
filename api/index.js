@@ -26,7 +26,11 @@ mongoose.connection.on("disconnected", () => {
 
 //middlewares
 app.use(cookieParser())
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
+const allowedOrigins = [
+  'http://localhost:3000', 
+  'http://localhost:3001', 
+  'https://wealthnoveltyrental.netlify.app'
+];
 
 app.use(cors({
   origin: (origin, callback) => {
