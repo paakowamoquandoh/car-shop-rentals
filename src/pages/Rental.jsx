@@ -12,7 +12,7 @@ import Testimonial from "../components/UI/Testimonial";
 import BlogList from "../components/UI/BlogList";
 import Booking from "../components/BookingForm/BookingForm";
 
-const  Rental = () => {
+const Rental = () => {
   return (
     <Helmet title="Home">
       {/* ============= hero section =========== */}

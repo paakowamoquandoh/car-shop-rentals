@@ -1,29 +1,37 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const useFetch = (url) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const json = await response.json();
-        setData(json);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
+        const res = await axios.get(url);
+        setData(res.data);
+      } catch (err) {
+        setError(err);
       }
+      setLoading(false);
     };
     fetchData();
   }, [url]);
 
-  return { data, loading, error };
+  const reFetch = async () => {
+    setLoading(true);
+    try {
+      const res = await axios.get(url);
+      setData(res.data);
+    } catch (err) {
+      setError(err);
+    }
+    setLoading(false);
+  };
+
+  return { data, loading, error, reFetch };
 };
 
 export default useFetch;
