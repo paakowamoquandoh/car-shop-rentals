@@ -12,6 +12,7 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 
+
 const Booking = ({ type }) => {
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
@@ -25,7 +26,7 @@ const Booking = ({ type }) => {
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
     driver: 1,
-    passengers: 1,
+    passengers : 1
   });
 
   const navigate = useNavigate();
@@ -46,27 +47,24 @@ const Booking = ({ type }) => {
       return prev;
     });
   };
+  
 
   const handleSearch = () => {
-    if (destination && date[0].startDate && date[0].endDate && options.passengers) {
-      navigate("/cars", { state: { destination, date, options } });
-    } else {
-      alert("Please fill in all fields.");
-    }
+    navigate("/hotels", { state: { destination, date, options } });
   };
-
-  const isSearchButtonDisabled = !destination || !date[0].startDate || !date[0].endDate || options.passengers < 1;
 
   return (
     <div className="formHeader">
       <div
-        className={type === "list" ? "headerContainer listMode" : "headerContainer"}
+        className={
+          type === "list" ? "headerContainer listMode" : "headerContainer"
+        }
       >
         {type !== "list" && (
           <>
             <div className="headerSearch">
               <div className="headerSearchItem">
-                <FontAwesomeIcon icon={faCar} className="headerIcon" />
+              <FontAwesomeIcon icon={faCar} className="headerIcon" />
                 <input
                   type="text"
                   placeholder="Where are you going?"
@@ -127,11 +125,7 @@ const Booking = ({ type }) => {
                 )}
               </div>
               <div className="headerSearchItem">
-                <button
-                  className="headerBtn"
-                  onClick={handleSearch}
-                  disabled={isSearchButtonDisabled}
-                >
+                <button className="headerBtn" onClick={handleSearch}>
                   Search
                 </button>
               </div>
