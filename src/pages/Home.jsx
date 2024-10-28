@@ -13,8 +13,11 @@ import CarTypes from "../components/UI/CarTypes";
 import MySwiper from "../components/Swiper/MySwiper";
 
 const Home = () => {
+  const handleClick = () => {
+    window.location.href = "tel:+233240234587";
+  };
   return (
-    <Helmet title="About">
+    <Helmet title="Home">
      {/* ============= hero section =========== */}
      <span className="p-0 hero__slider-section">
         <HeroSlider />
@@ -37,7 +40,7 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="mb-5 text-center">
-              <h6 className="section__subtitle">Wealth NoveltyS</h6>
+              <h6 className="section__subtitle">Wealth Novelty</h6>
               <h2 className="section__title">Car Models</h2>
             </Col>
             <MySwiper />
@@ -56,22 +59,17 @@ const Home = () => {
 
             <Col lg="6" md="6" sm="12">
               <div className="about__page-content">
-                <h2 className="section__title">
+                <h2 className="section_title">
                   We Are Committed To Provide Safe Ride Solutions
                 </h2>
 
-                <p className="section__description">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Eveniet veniam assumenda aperiam accusantium ex autem
-                  perferendis repellendus nostrum delectus. Nemo et dolore est
-                  tempore rem minima adipisci magni dolorum ipsam.
+                <p className="section_description">
+                Looking for a rental? We've got you covered!
+                Whether you need a car for a day, a week, or longer, our fleet of well-maintained rental cars is ready to take you anywhere you need to go.
                 </p>
 
-                <p className="section__description">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Eveniet veniam assumenda aperiam accusantium ex autem
-                  perferendis repellendus nostrum delectus. Nemo et dolore est
-                  tempore rem minima adipisci magni dolorum ipsam.
+                <p className="section_description">
+                Discover our competitive prices and experience a hassle-free car buying or rental experience. Let’s get you on the road today!
                 </p>
 
                 <div className=" d-flex align-items-center gap-3 mt-4">
@@ -79,8 +77,8 @@ const Home = () => {
                     <i class="ri-phone-line"></i>
                   </span>
 
-                  <div>
-                    <h6 className="section__subtitle">Need Any Help?</h6>
+                  <div onClick={handleClick}>
+                    <h6 className="section__subtitle">Call Us on</h6>
                     <h4>+233240234587</h4>
                   </div>
                 </div>

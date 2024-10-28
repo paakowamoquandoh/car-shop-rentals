@@ -7,7 +7,31 @@
   font-size: 1.1rem;
 }
 
+.section__title{
+  font-size: 2rem;
+  color: #000d6b;
+  margin-bottom: 20px;
+}
+
+.section__description{
+  font-size: 1.1rem;
+  color: #414141;
+  margin-bottom: 20px;
+}
+
 @media only screen and (max-width: 992px) {
+
+  .section__title{
+    font-size: 1.2rem;
+    color: #000d6b;
+    margin-bottom: 20px;
+  }
+  
+  .section__description{
+    font-size: 0.8rem;
+    color: #414141;
+    margin-bottom: 20px;
+  }
   .about__section-content h2 {
     font-size: 1.5rem;
   }

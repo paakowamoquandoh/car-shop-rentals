@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/become-driver.css";
 import { Container, Row, Col } from "reactstrap";
+import { Link } from "react-router-dom";
 
 import driverImg from "../../assets/all-images/toyota-offer-2.png";
 
@@ -15,12 +16,14 @@ const BecomeDriverSection = () => {
 
           <Col lg="6" md="6" sm="12">
             <h2 className="section__title become__driver-title">
-              Do You Want to Earn With Us? So Don't Be Late
+            Drive Your Dream, Own or Rent Today!
             </h2>
 
-            <button className="btn become__driver-btn mt-4">
+           <Link to={`/cars`}>
+           <button className="btn become__driver-btn mt-4">
               Become a Driver
             </button>
+           </Link>
           </Col>
         </Row>
       </Container>
