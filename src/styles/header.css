@@ -231,7 +231,8 @@
 
 @media screen and (max-width: 1176px){
     .brandLogo img{
-     height: 3rem;
+     height: 2.8rem;
+     margin-top: 5px;
     }
 
     .header__location-content h4 {
@@ -252,7 +253,7 @@
   .brandLogoMobile img{
     display: block;
     object-fit: cover;
-    height: 3rem;
+    height: 2.8rem;
     width: auto;
    }
 

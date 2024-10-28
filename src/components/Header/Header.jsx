@@ -21,11 +21,11 @@ const navLinks = [
 
   {
     path: "/blogs",
-    display: "Blog",
+    display: "About Us",
   },
   {
     path: "/contact",
-    display: "Contact",
+    display: "Contact Us",
   },
 ];
 
@@ -87,7 +87,7 @@ const Header = () => {
                   <i class="ri-earth-line"></i>
                 </span>
                 <div className="header__location-content">
-                  <h4>Accra/Tema</h4>
+                  <h4>Accra &Tema</h4>
                 </div>
               </div>
             </Col>
