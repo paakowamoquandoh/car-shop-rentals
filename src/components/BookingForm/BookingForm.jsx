@@ -50,7 +50,7 @@ const Booking = ({ type }) => {
   
 
   const handleSearch = () => {
-    navigate("/hotels", { state: { destination, date, options } });
+    navigate("/carsforrent", { state: { destination, date, options } });
   };
 
   return (

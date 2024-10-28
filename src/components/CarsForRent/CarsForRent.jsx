@@ -1,11 +1,11 @@
-import "./list.css";
+import "./carsforrent.css";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
-import SearchItem from "../../components/searchItem/SearchItem";
+import SearchItem from "../SearchItem/SearchItem";
 
-const List = () => {
+const CarsForRent = () => {
   const location = useLocation();
 
  
@@ -88,22 +88,22 @@ const List = () => {
               </div>
             </div>
             <button>Search</button>
-          </div>
-          <div className="listResult">
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-          </div>
+          </div>          
         </div>
+        <div className="listResult">
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+            <SearchItem />
+          </div>
       </div>
     </div>
   );
 };
 
-export default List;
+export default CarsForRent;

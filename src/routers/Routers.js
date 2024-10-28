@@ -10,6 +10,8 @@ import NotFound from "../pages/NotFound";
 import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import CarsForRent from "../components/CarsForRent/CarsForRent";
+
 
 
 const Routers = () => {
@@ -26,6 +28,7 @@ const Routers = () => {
       <Route path="*" element={<NotFound />} />
       <Route path="/login" element={<Login/>}/>
       <Route path="/register" element={<Register/>}/>
+      <Route path="/carsforrent" element={<CarsForRent/>}/>
     </Routes>
   );
 };

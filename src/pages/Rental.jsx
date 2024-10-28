@@ -14,7 +14,7 @@ import Booking from "../components/BookingForm/BookingForm";
 
 const Rental = () => {
   return (
-    <Helmet title="Home">
+    <Helmet title="Rental">
       {/* ============= hero section =========== */}
       <section className="p-0 hero__slider-section">
       <CommonSection title="Rental" />

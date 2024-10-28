@@ -81,3 +81,11 @@
 .listResult {
   flex: 3;
 }
+
+
+@media only screen and (max-width: 768px) {
+  .listContainer{
+    display: flex;
+    flex-direction: column;
+  }
+}
