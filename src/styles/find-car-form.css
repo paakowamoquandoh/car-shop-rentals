@@ -37,6 +37,11 @@
   padding-right: 15px;
 }
 
+/* .form__row{
+  background: linear-gradient(rgba(0, 102, 255, 0.678), rgba(228, 227, 225, 0.308)),
+    url("../assets/media/carousel1.jpg");
+} */
+
 .select__group {
   width: 30%;
 }
@@ -108,10 +113,11 @@
 
 @media only screen and (max-width: 768px) {
   .find__cars-left {
-    padding-top: 20px;
-    padding-bottom: 0;
-    background: #fff;
+    padding: 30px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center
   }
 
   .form {
@@ -141,7 +147,10 @@
   }
 
   .find__cars-left h2 {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    color: rgb(11, 30, 46);
+    text-transform: capitalize;
+    font-weight: bold;
   }
 
   .hero__form {
