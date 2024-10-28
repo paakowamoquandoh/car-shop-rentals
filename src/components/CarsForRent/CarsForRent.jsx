@@ -15,10 +15,10 @@ const CarsForRent = () => {
     options: { adult: 1, children: 0, room: 1 },
   };
 
-  const [destination, setDestination] = useState(location.state?.destination || defaultState.destination);
+  const [destination] = useState(location.state?.destination || defaultState.destination);
   const [date, setDate] = useState(location.state?.date || defaultState.date);
   const [openDate, setOpenDate] = useState(false);
-  const [options, setOptions] = useState(location.state?.options || defaultState.options);
+  const [options] = useState(location.state?.options || defaultState.options);
 
   return (
     <div>
