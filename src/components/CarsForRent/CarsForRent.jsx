@@ -4,6 +4,8 @@ import { useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../SearchItem/SearchItem";
+import { useNavigate } from "react-router-dom";
+import useFetch from "../../hooks/useFetch";
 
 const CarsForRent = () => {
   const location = useLocation();
@@ -19,6 +21,31 @@ const CarsForRent = () => {
   const [date, setDate] = useState(location.state?.date || defaultState.date);
   const [openDate, setOpenDate] = useState(false);
   const [options] = useState(location.state?.options || defaultState.options);
+
+  const { data, loading, error } = useFetch(
+    `http://localhost:8800/api/carslist/co`
+  );
+
+  if (loading) {
+    return <p>Loading, please wait...</p>;
+  }
+
+  if (error) {
+    return <p>Error loading data</p>;
+  }
+
+  const handleSearch = () => {
+    if (destination && date[0].startDate && date[0].endDate && options.passengers) {
+      navigate("/carsforrent", { state: { destination, date, options } });
+    } else {
+      alert("Please fill in all fields.");
+    }
+  };
+
+  const navigate = useNavigate();
+
+  const isSearchButtonDisabled = !destination || !date[0].startDate || !date[0].endDate || options.passengers < 1;
+
 
   return (
     <div>
@@ -48,18 +75,18 @@ const CarsForRent = () => {
               <div className="lsOptions">
                 <div className="lsOptionItem">
                   <span className="lsOptionText">
-                    Min price <small>per night</small>
+                    Min price <small>per day</small>
                   </span>
                   <input type="number" className="lsOptionInput" />
                 </div>
                 <div className="lsOptionItem">
                   <span className="lsOptionText">
-                    Max price <small>per night</small>
+                    Max price <small>per day</small>
                   </span>
                   <input type="number" className="lsOptionInput" />
                 </div>
                 <div className="lsOptionItem">
-                  <span className="lsOptionText">Adult</span>
+                  <span className="lsOptionText">Passengers</span>
                   <input
                     type="number"
                     min={1}
@@ -67,27 +94,11 @@ const CarsForRent = () => {
                     placeholder={options.adult}
                   />
                 </div>
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">Children</span>
-                  <input
-                    type="number"
-                    min={0}
-                    className="lsOptionInput"
-                    placeholder={options.children}
-                  />
-                </div>
-                <div className="lsOptionItem">
-                  <span className="lsOptionText">Room</span>
-                  <input
-                    type="number"
-                    min={1}
-                    className="lsOptionInput"
-                    placeholder={options.room}
-                  />
-                </div>
               </div>
             </div>
-            <button>Search</button>
+            <button 
+            disabled={isSearchButtonDisabled}
+            onClick={handleSearch}>Search</button>
           </div>          
         </div>
         <div className="listResult">

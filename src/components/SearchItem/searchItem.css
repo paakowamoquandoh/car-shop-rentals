@@ -1,109 +1,93 @@
-.searchItem {
-  border: 1px solid lightgray;
-  padding: 10px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.siImg {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-}
-
-.siDesc {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex: 2;
-}
-
-.siTitle {
-  font-size: 20px;
-  color: #0071c2;
-}
-
-.siDistance {
-  font-size: 12px;
-}
-
-.siTaxiOp {
-  font-size: 12px;
-  background-color: #008009;
-  color: white;
-  width: max-content;
-  padding: 3px;
+.car__item {
+  border: 1px solid #7c8a9736;
+  padding: 20px;
   border-radius: 5px;
 }
 
-.siSubtitle{
-  font-size: 12px;
-  font-weight: bold;
+.car__item-info span i {
+  color:gold;
+  font-size: 1.1rem;
 }
 
-.siFeatures{
-  font-size: 12px;
+.car__item-btn {
+  border-radius: 0;
+  border: none;
+  outline: none;
+  background: #000d6b;
+  padding: 8px 0px;
 }
 
-.siCancelOp{
-  font-size: 12px;
-  color: #008009;
-  font-weight: bold;
-}
-
-.siCancelOpSubtitle{
-  font-size: 12px;
-  color: #008009;
-}
-
-.siDetails {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between
-}
-
-.siRating{
-  display: flex;
-  justify-content: space-between
-}
-
-.siRating>span{
+.car__item-btn a {
+  text-decoration: none;
+  color: #fff;
   font-weight: 500;
 }
-.siRating>button{
- background-color: #003580;
- color: white;
- padding: 5px;
- font-weight: bold;
- border: none;
+
+.car__item-btn a:hover {
+  color: #fff;
+}
+.car__btn-details {
+  background:rgb(32, 218, 209);
+  border-radius: 0px 4px 4px 0px;
 }
 
-.siDetailTexts{
-  text-align: right;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+.car__btn-rent {
+  border-radius: 4px 0px 0px 4px;
 }
 
-.siPrice{
-  font-size: 24px;
+.car__item-content h4 {
+  font-size: 1.8rem;
 }
 
-.siTaxOp{
-  font-size: 12px;
-  color: gray;
+.car__item-content h6 {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
-.siCheckButton{
-  background-color: #0071c2;
-  color: white;
-  font-weight: bold;
-  padding: 10px 5px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
+@media only screen and (max-width: 992px) {
+  .car__item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+  }
+
+  .car__item h6 {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+  .car__item-info {
+    flex-wrap: wrap;
+  }
+
+  .car__item-info span {
+    font-size: 0.8rem;
+    justify-content: space-between;
+  }
+
+  .car__item-btn {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .car__item h4 {
+    font-size: 1rem;
+  }
+
+  .car__item h6 {
+    font-size: 0.9rem;
+  }
+
+  .car__item-info span {
+    font-size: 0.7rem;
+  }
+
+  .car__item-info span i {
+    font-size: 0.9rem;
+  }
+
+  .car__item-btn {
+    font-size: 0.8rem;
+  }
 }
