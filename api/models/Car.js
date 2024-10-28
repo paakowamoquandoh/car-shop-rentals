@@ -49,6 +49,18 @@ const CarSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  pricePerDay: {
+    type: Number,
+    required: true,
+  },
+  forRent: {
+    type: Boolean,
+    default: false,
+  },  
+  location: {
+    type: String,
+    required: true,
+  }
 });
 
 export default mongoose.model("Car", CarSchema)

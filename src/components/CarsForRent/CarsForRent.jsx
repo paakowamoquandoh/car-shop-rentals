@@ -9,6 +9,7 @@ import useFetch from "../../hooks/useFetch";
 
 const CarsForRent = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
  
   const defaultState = {
@@ -23,7 +24,7 @@ const CarsForRent = () => {
   const [options] = useState(location.state?.options || defaultState.options);
 
   const { data, loading, error } = useFetch(
-    `http://localhost:8800/api/carslist/co`
+    `http://localhost:8800/api/carslist?location=${destination}`
   );
 
   if (loading) {
@@ -42,7 +43,7 @@ const CarsForRent = () => {
     }
   };
 
-  const navigate = useNavigate();
+  
 
   const isSearchButtonDisabled = !destination || !date[0].startDate || !date[0].endDate || options.passengers < 1;
 
@@ -102,15 +103,9 @@ const CarsForRent = () => {
           </div>          
         </div>
         <div className="listResult">
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
-            <SearchItem />
+          {loading ? "Cars Loading..." : <>
+          {data.map(item =>(<SearchItem item={item} key={item._id} />))}            
+          </>}
           </div>
       </div>
     </div>
