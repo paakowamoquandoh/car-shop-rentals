@@ -25,6 +25,7 @@ const Booking = ({ type }) => {
   ]);
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
+    driver: 1,
     passengers : 1
   });
 
@@ -49,7 +50,7 @@ const Booking = ({ type }) => {
   
 
   const handleSearch = () => {
-    navigate("/hotels", { state: { destination, date, options } });
+    navigate("/cars", { state: { destination, date, options } });
   };
 
   return (
