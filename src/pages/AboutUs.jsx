@@ -4,10 +4,10 @@ import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/CommonSection";
 import BlogList from "../components/UI/BlogList";
 
-const Blog = () => {
+const AboutUs = () => {
   return (
-    <Helmet title="Blogs">
-      <CommonSection title="Blogs" />
+    <Helmet title="About Us">
+      <CommonSection title="About Us" />
       <section>
         <Container>
           <Row>
@@ -20,4 +20,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default AboutUs;
