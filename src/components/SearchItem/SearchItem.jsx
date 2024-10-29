@@ -5,18 +5,18 @@ import { Link } from "react-router-dom";
 const SearchItem = ({item}) => {
   return (
     <Col lg="4" md="4" sm="6" className="mb-5">
-      <div className="car__item">
-        <div className="car__img">
+      <div className="searchCar__item">
+        <div className="searchCar__img">
           <img src={item.photos[0]} alt="" className="w-100" />
         </div>
 
-        <div className="car__item-content mt-4">
+        <div className="searchCar__item-content mt-4">
           <h4 className="section__title text-center">{item.name}</h4>
           <h6 className="rent__price text-center mt-">
             Ghc {item.pricePerDay}.00 <span>/ Day</span>
           </h6>
 
-          <div className="car__item-info d-flex align-items-center justify-content-between mt-3 mb-4">
+          <div className="searchCar__item-info d-flex align-items-center justify-content-between mt-3 mb-4">
             <span className=" d-flex align-items-center gap-1">
               <i class="ri-car-line"></i> {item.model}
             </span>
@@ -28,12 +28,12 @@ const SearchItem = ({item}) => {
             </span>
           </div>
 
-          <button className=" w-50 car__item-btn car__btn-rent">
+          <button className=" w-50 searchCar__item-btn searchCar__btn-rent">
             <Link to={`/cars`}>Rent Car</Link>
           </button>
 
-          <button className=" w-50 car__item-btn car__btn-details">
-            <Link to={`/cars`}>Details</Link>
+          <button className=" w-50 searchCar__item-btn searchCar__btn-details">
+            <Link to={`/cars/${item._id}`}>Details</Link>
           </button>
         </div>
       </div>

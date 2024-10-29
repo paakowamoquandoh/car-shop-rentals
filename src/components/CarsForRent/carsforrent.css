@@ -13,7 +13,7 @@
 
 .listSearch {
   flex: 1;
-  background-color: rgb(32, 218, 209);
+  background-color: rgb(1, 175, 166);
   padding: 10px;
   border-radius: 10px;
   position: sticky;
@@ -33,6 +33,13 @@
   gap: 5px;
   margin-bottom: 10px;
 }
+
+.lsItem input::placeholder {
+  color: #2c2c2c; /* Adjust the color as desired */
+  font-style: italic;
+  opacity: 0.7;
+}
+
 
 .lsItem>label{
   font-size: 12px;

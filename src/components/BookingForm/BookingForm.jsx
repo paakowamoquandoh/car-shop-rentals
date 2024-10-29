@@ -79,9 +79,9 @@ const Booking = ({ type }) => {
                 <span
                   onClick={() => setOpenDate(!openDate)}
                   className="headerSearchText dateInput"
-                >{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
+                >{`${format(date[0].startDate, "MM-dd-yyyy")} to ${format(
                   date[0].endDate,
-                  "MM/dd/yyyy"
+                  "MM-dd-yyyy"
                 )}`}</span>
                 {openDate && (
                   <DateRange
