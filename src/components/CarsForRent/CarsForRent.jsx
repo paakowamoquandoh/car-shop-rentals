@@ -58,7 +58,7 @@ const CarsForRent = () => {
               <label>Destination</label>
               <input placeholder={destination} type="text" />
             </div>
-            <div className="lsItem">
+            <div className="lsItem datepicker">
               <label>Check-in Date</label>
               <span onClick={() => setOpenDate(!openDate)}>
                 {`${format(date[0].startDate, "MM-dd-yyyy")} to ${format(date[0].endDate, "MM-dd-yyyy")}`}

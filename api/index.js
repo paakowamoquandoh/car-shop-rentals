@@ -17,7 +17,7 @@ const connect = async () => {
     console.log("Welcome to Wealth Novelty");
   } catch (error) {
     throw error;
-  } 
+  }
 };
 
 mongoose.connection.on("disconnected", () => {

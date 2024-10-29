@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const SearchItem = ({item}) => {
   return (
-    <Col lg="3" md="4" sm="6" className="">
+    <Col className="">
       <div className="searchCar__item">
         <div className="searchCar__img">
           <img src={item.photos[0]} alt="" className="w-100" />
