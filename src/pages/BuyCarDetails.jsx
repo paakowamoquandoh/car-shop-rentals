@@ -4,15 +4,15 @@ import { Container, Row, Col } from "reactstrap";
 import Helmet from "../components/Helmet/Helmet";
 import { useParams } from "react-router-dom";
 import BookingForm from "../components/UI/BookingForm";
+import PaymentMethod from "../components/UI/PaymentMethod";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
   faCircleArrowRight,
   faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import PaymentMethod from "../components/UI/PaymentMethod";
 
-const CarDetails = () => {
+const BuyCarDetails = () => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
   const { slug } = useParams();
@@ -209,4 +209,4 @@ const CarDetails = () => {
   );
 };
 
-export default CarDetails;
+export default BuyCarDetails;

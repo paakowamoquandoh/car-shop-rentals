@@ -4,13 +4,10 @@ import { useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
 import SearchItem from "../SearchItem/SearchItem";
-import { useNavigate } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
 const CarsForRent = () => {
   const location = useLocation();
-  const navigate = useNavigate();
-
  
   const defaultState = {
     destination: "",
@@ -23,7 +20,7 @@ const CarsForRent = () => {
   const [openDate, setOpenDate] = useState(false);
   const [options] = useState(location.state?.options || defaultState.options);
 
-  const { data, loading, error } = useFetch(
+  const { data, loading, error, reFetch } = useFetch(
     `http://localhost:8800/api/carslist?location=${destination}`
   );
 
@@ -35,18 +32,10 @@ const CarsForRent = () => {
     return <p>Error loading data</p>;
   }
 
-  const handleSearch = () => {
-    if (destination && date[0].startDate && date[0].endDate && options.passengers) {
-      navigate("/carsforrent", { state: { destination, date, options } });
-    } else {
-      alert("Please fill in all fields.");
-    }
-  };
-
+  const handleClick = () => {
+    reFetch()
+  }
   
-
-  const isSearchButtonDisabled = !destination || !date[0].startDate || !date[0].endDate || options.passengers < 1;
-
 
   return (
     <div>
@@ -98,8 +87,7 @@ const CarsForRent = () => {
               </div>
             </div>
             <button 
-            disabled={isSearchButtonDisabled}
-            onClick={handleSearch}>Search</button>
+            onClick={handleClick}>Search</button>
           </div>          
         </div>
         <div className="listResult">

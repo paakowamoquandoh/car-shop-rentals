@@ -11,6 +11,7 @@ import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import CarsForRent from "../components/CarsForRent/CarsForRent";
+import BuyCarDetails from "../pages/BuyCarDetails";
 
 
 
@@ -28,6 +29,7 @@ const Routers = () => {
       <Route path="*" element={<NotFound />} />
       <Route path="/login" element={<Login/>}/>
       <Route path="/register" element={<Register/>}/>
+      <Route path="/buycardetails/:slug" element={<BuyCarDetails/>}/>
       <Route path="/carsforrent" element={<CarsForRent/>}/>
     </Routes>
   );
