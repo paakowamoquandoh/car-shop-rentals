@@ -2,13 +2,15 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  margin: 10px 6rem;
+  gap: 2rem;
 }
 
 .listWrapper {
   width: 100%;
-  max-width: 1024px;
   display: flex;
   gap: 20px;
+  max-width: 1024px;
 }
 
 .listSearch {
@@ -19,6 +21,7 @@
   position: sticky;
   top: 10px;
   height: max-content;
+  width: 40%;
 }
 
 .lsTitle{
@@ -86,7 +89,10 @@
 }
 
 .listResult {
-  flex: 3;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 
@@ -94,5 +100,14 @@
   .listContainer{
     display: flex;
     flex-direction: column;
+    margin: 0;
+  }
+
+  .listSearch {
+    max-width: 98%;
+  }
+
+  .listContainer {
+    margin: 10px;
   }
 }

@@ -9,6 +9,27 @@
   font-size: 1.1rem;
 }
 
+.rentalCarName{
+  font-size: 1.4rem;
+  color: #00686b;
+  margin-bottom: -10px;
+  font-weight: 600;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+.searchCar__img img{
+ min-height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.searchSection__title{
+  font-size: 1rem;
+  color: #000d6b;
+  font-weight: bold;
+}
+
 .searchCar__item-btn {
   border-radius: 0;
   border: none;
