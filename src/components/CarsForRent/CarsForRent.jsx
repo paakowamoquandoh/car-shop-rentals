@@ -35,7 +35,7 @@ const CarsForRent = () => {
   }
 
   const handleClick = () => {
-    // reFetch()
+    reFetch()
   }
   
 
