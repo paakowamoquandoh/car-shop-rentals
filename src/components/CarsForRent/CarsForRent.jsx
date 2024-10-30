@@ -19,9 +19,11 @@ const CarsForRent = () => {
   const [date, setDate] = useState(location.state?.date || defaultState.date);
   const [openDate, setOpenDate] = useState(false);
   const [options] = useState(location.state?.options || defaultState.options);
+  const [min, setMin] = useState(undefined);
+  const [max, setMax] = useState(undefined);
 
   const { data, loading, error, reFetch } = useFetch(
-    `http://localhost:8800/api/carslist?location=${destination}`
+    `http://localhost:8800/api/carslist?location=${destination}&pricePerDay=${min || 0}&max=${max || 999}`
   );
 
   if (loading) {
@@ -67,13 +69,13 @@ const CarsForRent = () => {
                   <span className="lsOptionText">
                     Min rental <small>price</small>
                   </span>
-                  <input type="number" className="lsOptionInput" />
+                  <input type="number" className="lsOptionInput" onChange={e=>setMin(e.target.value)}/>
                 </div>
                 <div className="lsOptionItem">
                   <span className="lsOptionText">
                     Max rental <small>price</small>
                   </span>
-                  <input type="number" className="lsOptionInput" />
+                  <input type="number" className="lsOptionInput" onChange={e=>setMax(e.target.value)}/>
                 </div>
                 <div className="lsOptionItem">
                   <span className="lsOptionText">Passengers</span>
