@@ -12,7 +12,7 @@ const CarsForRent = () => {
   const defaultState = {
     destination: "",
     date: [{ startDate: new Date(), endDate: new Date(), key: "selection" }],
-    options: { adult: 1, children: 0, room: 1 },
+    options: { passengers: 0 },
   };
 
   const [destination] = useState(location.state?.destination || defaultState.destination);
@@ -23,7 +23,7 @@ const CarsForRent = () => {
   const [max, setMax] = useState(undefined);
 
   const { data, loading, error, reFetch } = useFetch(
-    `http://localhost:8800/api/carslist?location=${destination}&pricePerDay=${min || 0}&max=${max || 999}`
+    `http://localhost:8800/api/carslist?location=${destination}&min=${min || 0}&max=${max || 999}`
   );
 
   if (loading) {
@@ -35,7 +35,7 @@ const CarsForRent = () => {
   }
 
   const handleClick = () => {
-    reFetch()
+    // reFetch()
   }
   
 
