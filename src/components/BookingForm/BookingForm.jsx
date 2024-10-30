@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 const Booking = ({ type }) => {
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
-  const [date, setDate] = useState([
+  const [dates, setDate] = useState([
     {
       startDate: new Date(),
       endDate: new Date(),
@@ -47,15 +47,17 @@ const Booking = ({ type }) => {
     });
   };
 
+
   const handleSearch = () => {
-    if (destination && date[0].startDate && date[0].endDate && options.passengers) {
-      navigate("/carsforrent", { state: { destination, date, options } });
+    if (destination && dates[0].startDate && dates[0].endDate && options.passengers) {
+
+      navigate("/carsforrent", { state: { destination, dates, options } });
     } else {
       alert("Please fill in all fields.");
     }
   };
 
-  const isSearchButtonDisabled = !destination || !date[0].startDate || !date[0].endDate || options.passengers < 1;
+  const isSearchButtonDisabled = !destination || !dates[0].startDate || !dates[0].endDate || options.passengers < 1;
 
   return (
     <div className="formHeader">
@@ -79,8 +81,8 @@ const Booking = ({ type }) => {
                 <span
                   onClick={() => setOpenDate(!openDate)}
                   className="headerSearchText dateInput"
-                >{`${format(date[0].startDate, "MM-dd-yyyy")} to ${format(
-                  date[0].endDate,
+                >{`${format(dates[0].startDate, "MM-dd-yyyy")} to ${format(
+                  dates[0].endDate,
                   "MM-dd-yyyy"
                 )}`}</span>
                 {openDate && (
@@ -88,7 +90,7 @@ const Booking = ({ type }) => {
                     editableDateInputs={true}
                     onChange={(item) => setDate([item.selection])}
                     moveRangeOnFirstSelection={false}
-                    ranges={date}
+                    ranges={dates}
                     className="date"
                     minDate={new Date()}
                   />

@@ -14,7 +14,6 @@ const CarsForRent = () => {
     date: [{ startDate: new Date(), endDate: new Date(), key: "selection" }],
     options: { passengers: 0 },
   };
-
   const [destination] = useState(location.state?.destination || defaultState.destination);
   const [date, setDate] = useState(location.state?.date || defaultState.date);
   const [openDate, setOpenDate] = useState(false);
