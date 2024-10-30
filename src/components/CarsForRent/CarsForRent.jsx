@@ -65,13 +65,13 @@ const CarsForRent = () => {
               <div className="lsOptions">
                 <div className="lsOptionItem">
                   <span className="lsOptionText">
-                    Min price <small>per day</small>
+                    Min rental <small>price</small>
                   </span>
                   <input type="number" className="lsOptionInput" />
                 </div>
                 <div className="lsOptionItem">
                   <span className="lsOptionText">
-                    Max price <small>per day</small>
+                    Max rental <small>price</small>
                   </span>
                   <input type="number" className="lsOptionInput" />
                 </div>
