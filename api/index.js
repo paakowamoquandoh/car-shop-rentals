@@ -19,7 +19,7 @@ const connect = async () => {
     throw error;
   }
 };
-
+ 
 mongoose.connection.on("disconnected", () => {
   console.log("Wealth Novelty disconnected!");
 });  
