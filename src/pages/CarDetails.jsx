@@ -192,12 +192,7 @@ const CarDetails = () => {
             <Col lg="7" className="mt-5">
               <div className="booking-info mt-5">
                 <h5 className="mb-4 fw-bold">Our Terms and Conditions</h5>
-                <button
-          className="btn btn-primary mt-3"
-          onClick={() => window.open(`${process.env.PUBLIC_URL}/terms-and-conditions.pdf`, "_blank")}
-        >
-          View Terms and Conditions
-        </button>
+                <BookingForm />
               </div>
             </Col>
 
