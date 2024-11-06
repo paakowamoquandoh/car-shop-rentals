@@ -11,3 +11,12 @@
   border: none;
   outline: none;
 }
+
+
+@media only screen and (max-width: 768px) {
+  .bankpayment{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}

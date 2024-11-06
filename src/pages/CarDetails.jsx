@@ -3,7 +3,6 @@ import useFetch from "../hooks/useFetch";
 import { Container, Row, Col } from "reactstrap";
 import Helmet from "../components/Helmet/Helmet";
 import { useParams } from "react-router-dom";
-import BookingForm from "../components/UI/BookingForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
@@ -192,7 +191,12 @@ const CarDetails = () => {
             <Col lg="7" className="mt-5">
               <div className="booking-info mt-5">
                 <h5 className="mb-4 fw-bold">Our Terms and Conditions</h5>
-                <BookingForm />
+                <button
+      onClick={() => window.open(`${process.env.PUBLIC_URL}/assets/WEALTH AUTO RENTAL AGREEMENT FORM.pdf`, "_blank")}
+      className="btn btn-primary"
+    >
+      View Terms and Conditions
+    </button>
               </div>
             </Col>
 

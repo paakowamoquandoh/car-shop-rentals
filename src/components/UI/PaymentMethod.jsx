@@ -1,7 +1,5 @@
 import React from "react";
-
 import masterCard from "../../assets/all-images/master-card.jpg";
-import paypal from "../../assets/all-images/paypal.jpg";
 import "../../styles/payment-method.css";
 
 const PaymentMethod = () => {
@@ -17,9 +15,12 @@ const PaymentMethod = () => {
         <label htmlFor="" className="d-flex align-items-center gap-2">
           <input type="radio" /> Mobile Money 🇬🇭
         </label>
+        <p>
+          <i>You will be redirected to the mobile money platform to complete the payment.</i>
+        </p>
       </div>
 
-      <div className="payment mt-3 d-flex align-items-center justify-content-between">
+      <div className="payment mt-3 d-flex justify-content-between bankpayment">
         <label htmlFor="" className="d-flex align-items-center gap-2">
           <input type="radio" />Visa / Master Card
         </label>
@@ -28,6 +29,7 @@ const PaymentMethod = () => {
       </div>
 
       <div className="payment text-end mt-5">
+         
         <button>Reserve Now</button>
       </div>
     </>
