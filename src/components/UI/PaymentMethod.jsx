@@ -11,26 +11,28 @@ const PaymentMethod = () => {
         </label>
       </div> */}
 
-      <div className="payment mt-3">
-        <label htmlFor="" className="d-flex align-items-center gap-2">
-          <input type="radio" /> Mobile Money 🇬🇭
-        </label>
-        <p>
-          <i>You will be redirected to the mobile money platform to complete the payment.</i>
-        </p>
+      <div className="payment mt-3 bankPayment">
+        <span htmlFor="" className="d-flex align-items-center gap-2">
+          Mobile Money 🇬🇭
+          <button>Reserve Now</button>
+        </span>
+       
+        <span>
+          <i>(You will be redirected to the mobile money platform to complete the payment.)</i>
+        </span>
       </div>
 
-      <div className="payment mt-3 d-flex justify-content-between bankpayment">
-        <label htmlFor="" className="d-flex align-items-center gap-2">
-          <input type="radio" />Visa / Master Card
-        </label>
-
-        <img src={masterCard} alt="" />
+      <div className="payment mt-3 d-flex justify-content-between ">
+        <span htmlFor="" className="d-flex align-items-center gap-2 bankpayment">
+          Visa / Master Card
+          <img src={masterCard} alt="" />
+          <button>Reserve Now</button> 
+        </span>        
       </div>
-
-      <div className="payment text-end mt-5">
-         
-        <button>Reserve Now</button>
+      <div className="payment text-start mt-5">
+      <h2>
+  <b>Ghc 2245</b> (3 days)
+     </h2>
       </div>
     </>
   );

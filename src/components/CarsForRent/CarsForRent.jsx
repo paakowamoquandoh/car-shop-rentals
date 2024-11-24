@@ -21,9 +21,7 @@ const CarsForRent = () => {
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
 
-  const { data, loading, error, reFetch } = useFetch(
-    `http://localhost:8800/api/carslist?location=${destination}&min=${min || 0}&max=${max || 999}`
-  );
+  const { data, loading, error, reFetch } = useFetch(`http://localhost:8800/api/carslist?location=${destination}&min=${min || 0}&max=${max || 999}`);
 
   if (loading) {
     return <p>Loading, please wait...</p>;

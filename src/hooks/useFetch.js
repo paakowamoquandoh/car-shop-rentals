@@ -9,6 +9,7 @@ const useFetch = (url) => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
+      console.log("Fetching data from:", url); // Log the URL here
       try {
         const res = await axios.get(url);
         setData(res.data);
@@ -18,10 +19,11 @@ const useFetch = (url) => {
       setLoading(false);
     };
     fetchData();
-  }, []);
+  }, [url]); // Add url as a dependency
 
   const reFetch = async () => {
     setLoading(true);
+    console.log("Re-fetching data from:", url); // Log the URL here for reFetch
     try {
       const res = await axios.get(url);
       setData(res.data);

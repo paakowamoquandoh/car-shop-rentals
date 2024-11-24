@@ -24,8 +24,7 @@ const Booking = ({ type }) => {
   ]);
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
-    driver: 1,
-    passengers: 1,
+    passengers: 1
   });
 
   const navigate = useNavigate();

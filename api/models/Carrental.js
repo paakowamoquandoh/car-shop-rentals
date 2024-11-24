@@ -17,6 +17,10 @@ const CarRentalSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    location: {
+      type: String,
+      required: true,
+    },
     maxPeople: {
       type: Number,
       required: true,
