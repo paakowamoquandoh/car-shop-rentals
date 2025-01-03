@@ -30,9 +30,6 @@ const PaymentMethod = () => {
         </span>        
       </div>
       <div className="payment text-start mt-5">
-      <h2>
-  <b>Ghc 2245</b> (3 days)
-     </h2>
       </div>
     </>
   );

@@ -193,10 +193,14 @@ const CarDetails = () => {
                 <h5 className="mb-4 fw-bold">Our Terms and Conditions</h5>
                 <button
       onClick={() => window.open(`${process.env.PUBLIC_URL}/assets/WEALTH AUTO RENTAL AGREEMENT FORM.pdf`, "_blank")}
-      className="btn btn-primary"
+      className="btn btn-primary mb-3"
     >
       View Terms and Conditions
     </button>
+    <span>
+    <h2><b> Ghc 2245</b> for 3days
+    </h2>
+    </span>
               </div>
             </Col>
 
