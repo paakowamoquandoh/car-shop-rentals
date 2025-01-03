@@ -26,7 +26,7 @@ mongoose.connection.on("disconnected", () => {
 
 //middlewares
 app.use(cookieParser())
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
+const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001', 'https://car-shop-rentals-kol7.onrender.com'];
 
 app.use(cors({
   origin: (origin, callback) => {
