@@ -16,7 +16,7 @@ const CarDetails = () => {
   const [open, setOpen] = useState(false);
   const { slug } = useParams();
   const { data, loading, error } = useFetch(
-    'http://localhost:8800/api/carslist'
+    "http://localhost:8800/api/carslist"
   );
 
   // Check if data is loaded before trying to find the item
@@ -61,7 +61,7 @@ const CarDetails = () => {
     <Helmet title={item.name}>
       <section>
         <Container>
-        {open && (
+          {open && (
             <div className="slider">
               <FontAwesomeIcon
                 icon={faCircleXmark}
@@ -94,7 +94,9 @@ const CarDetails = () => {
 
             <Col lg="6">
               <div className="car__info">
-                <h2 className="rentalCarName">{item.model} {item.name}</h2>
+                <h2 className="rentalCarName">
+                  {item.model} {item.name}
+                </h2>
 
                 <div className="d-flex align-items-center gap-5 mb-4 mt-3">
                   <h6 className="rent__price fw-bold fs-4">
@@ -113,9 +115,7 @@ const CarDetails = () => {
                   </span>
                 </div>
 
-                <p className="section__description">
-                  {item.description}
-                </p>
+                <p className="section__description">{item.description}</p>
 
                 <div
                   className="d-flex align-items-center mt-3"
@@ -151,7 +151,10 @@ const CarDetails = () => {
                   style={{ columnGap: "2.8rem" }}
                 >
                   <span className="d-flex align-items-center gap-1 section__description">
-                    <i className="ri-map-pin-line" style={{ color: "#f9a826" }}></i>{" "}
+                    <i
+                      className="ri-map-pin-line"
+                      style={{ color: "#f9a826" }}
+                    ></i>{" "}
                     {item.engine}
                   </span>
 
@@ -173,34 +176,38 @@ const CarDetails = () => {
                 </div>
               </div>
               <div className="hotelImages">
-              {item.photos?.map((photo, i) => (
-                <div className="hotelImgWrapper" key={i}>
-                  <img
-                    onClick={() => handleOpen(i)}
-                    src={photo}
-                    alt=""
-                    className="hotelImg"
-                  />
-                </div>
-              ))}
-            </div>
+                {item.photos?.map((photo, i) => (
+                  <div className="hotelImgWrapper" key={i}>
+                    <img
+                      onClick={() => handleOpen(i)}
+                      src={photo}
+                      alt=""
+                      className="hotelImg"
+                    />
+                  </div>
+                ))}
+              </div>
             </Col>
-
-          
 
             <Col lg="7" className="mt-5">
               <div className="booking-info mt-5">
                 <h5 className="mb-4 fw-bold">Our Terms and Conditions</h5>
                 <button
-      onClick={() => window.open(`${process.env.PUBLIC_URL}/assets/WEALTH AUTO RENTAL AGREEMENT FORM.pdf`, "_blank")}
-      className="btn btn-primary mb-3"
-    >
-      View Terms and Conditions
-    </button>
-    <span>
-    <h2><b> Ghc 2245</b> for 3days
-    </h2>
-    </span>
+                  onClick={() =>
+                    window.open(
+                      `${process.env.PUBLIC_URL}/assets/WEALTH AUTO RENTAL AGREEMENT FORM.pdf`,
+                      "_blank"
+                    )
+                  }
+                  className="btn btn-primary mb-3"
+                >
+                  View Terms and Conditions
+                </button>
+                <span>
+                  <h2>
+                    <b> Ghc 2245</b> for 3days
+                  </h2>
+                </span>
               </div>
             </Col>
 
