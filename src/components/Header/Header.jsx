@@ -1,9 +1,12 @@
 import React, { useRef } from "react";
-
+import { Link, useNavigate, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { faUser, faSignOut } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container, Row, Col } from "reactstrap";
-import { Link, NavLink } from "react-router-dom";
 import "../../styles/header.css";
-import logo from "../../assets/media/logo.jpeg"
+import logo from "../../assets/media/logo.jpeg";
 
 const navLinks = [
   {
@@ -12,11 +15,11 @@ const navLinks = [
   },
   {
     path: "/rental",
-    display: "Rental",
+    display: "Rent",
   },
   {
     path: "/cars",
-    display: "Cars",
+    display: "Buy",
   },
 
   {
@@ -31,6 +34,14 @@ const navLinks = [
 
 const Header = () => {
   const menuRef = useRef(null);
+  const { client, dispatch } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    dispatch({ type: "LOGOUT" });
+    localStorage.removeItem("client");
+    navigate("/");
+  };
 
   const toggleMenu = () => menuRef.current.classList.toggle("menu__active");
 
@@ -50,15 +61,34 @@ const Header = () => {
             </Col>
 
             <Col lg="6" md="6" sm="6">
-              <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
-                <Link to="/login" className=" d-flex align-items-center gap-1">
-                  <i class="ri-login-circle-line"></i> Login
-                </Link>
+              {client ? (
+                <div className="navLeft">
+                  <div className="userArea">
+                    <FontAwesomeIcon icon={faUser} />
+                    {client.clientname}
+                  </div>
+                  <div>
+                    <FontAwesomeIcon onClick={handleClick} icon={faSignOut} />
+                  </div>
+                </div>
+              ) : (
+                
+                  <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
+                    <Link
+                      to="/login"
+                      className=" d-flex align-items-center gap-1"
+                    >
+                      <i class="ri-login-circle-line"></i> Login
+                    </Link>
 
-                <Link to="/register" className=" d-flex align-items-center gap-1">
-                  <i class="ri-user-line"></i> Register
-                </Link>
-              </div>
+                    <Link
+                      to="/register"
+                      className=" d-flex align-items-center gap-1"
+                    >
+                      <i class="ri-user-line"></i> Register
+                    </Link>
+                  </div>
+              )}
             </Col>
           </Row>
         </Container>
@@ -74,7 +104,7 @@ const Header = () => {
                   <Link to="/home" className=" d-flex align-items-center gap-2">
                     {/* <i class="ri-car-line"></i> */}
                     <span className="brandLogo">
-                     <img src={logo} alt=""/>
+                      <img src={logo} alt="" />
                     </span>
                   </Link>
                 </h1>
@@ -99,7 +129,6 @@ const Header = () => {
                 </span>
                 <div className="header__location-content">
                   <h4>24Hours</h4>
-                 
                 </div>
               </div>
             </Col>
@@ -130,14 +159,14 @@ const Header = () => {
             </span>
 
             <span className="brandLogoMobile">
-                     <img src={logo} alt=""/>
-            </span>            
+              <img src={logo} alt="" />
+            </span>
 
             <div className="navigation" ref={menuRef} onClick={toggleMenu}>
               <div className="menu">
-              <span className="brandLogoMobile">
-                     <img src={logo} alt=""/>
-            </span>
+                <span className="brandLogoMobile">
+                  <img src={logo} alt="" />
+                </span>
                 {navLinks.map((item, index) => (
                   <NavLink
                     to={item.path}
@@ -150,15 +179,34 @@ const Header = () => {
                   </NavLink>
                 ))}
                 <div className="mobileMenu">
+                {client ? (
+                <div className="navLeft">
+                  <div className="userArea">
+                    <FontAwesomeIcon icon={faUser} />
+                    {client.clientname}
+                  </div>
+                  <div>
+                    <FontAwesomeIcon onClick={handleClick} icon={faSignOut} />
+                  </div>
+                </div>
+              ) : (                
                 <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
-                <Link to="/login" className=" d-flex align-items-center gap-1">
+                <Link
+                  to="/login"
+                  className=" d-flex align-items-center gap-1"
+                >
                   <i class="ri-login-circle-line"></i> Login
                 </Link>
 
-                <Link to="/register" className=" d-flex align-items-center gap-1">
+                <Link
+                  to="/register"
+                  className=" d-flex align-items-center gap-1"
+                >
                   <i class="ri-user-line"></i> Register
                 </Link>
               </div>
+              )}
+                 
                 </div>
               </div>
             </div>

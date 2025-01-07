@@ -10,14 +10,17 @@ import "slick-carousel/slick/slick-theme.css";
 
 import { BrowserRouter as Router } from "react-router-dom";
 import { SearchContextProvider } from "./context/SearchContext";
+import { AuthContextProvider } from './context/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+    <AuthContextProvider>
     <SearchContextProvider>
     <Router>
-      <App />
+      <App /> 
     </Router>
     </SearchContextProvider>
+    </AuthContextProvider>
   </React.StrictMode>
 );

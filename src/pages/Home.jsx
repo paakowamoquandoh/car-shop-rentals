@@ -22,7 +22,6 @@ const Home = () => {
      <span className="p-0 hero__slider-section">
         <HeroSlider />
       </span>
-        {/* =============== blog section =========== */}
         <section>
         <Container>
           <Row>

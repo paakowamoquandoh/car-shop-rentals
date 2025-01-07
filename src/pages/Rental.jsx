@@ -11,6 +11,7 @@ import BecomeDriverSection from "../components/UI/BecomeDriverSection";
 import Testimonial from "../components/UI/Testimonial";
 import BlogList from "../components/UI/BlogList";
 import Booking from "../components/BookingForm/BookingForm";
+import Rent from "../client/src/components/Rent/Rent";
 
 const Rental = () => {
   return (
@@ -29,7 +30,7 @@ const Rental = () => {
               </Col>
 
               <Col lg="12" md="12" sm="12">
-                <Booking/>
+                <Rent/>
               </Col>
             </Row>
           </Container>
