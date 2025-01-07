@@ -21,7 +21,7 @@ const CarForRent = () => {
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
-  const { data, loading, error } = useFetch(`http://localhost:8800/api/carlist/find/${id}`)
+  const { data, loading, error } = useFetch(`http://localhost:8800/api/carslist/find/${id}`)
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
