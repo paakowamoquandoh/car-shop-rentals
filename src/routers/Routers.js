@@ -10,9 +10,10 @@ import NotFound from "../pages/NotFound";
 import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
-import CarsForRent from "../components/CarsForRent/CarsForRent";
+// import CarsForRent from "../components/CarsForRent/CarsForRent";
 import BuyCarDetails from "../pages/BuyCarDetails";
 import Rentals from "../rent/pages/Rentals/Rentals";
+import CarForRent from "../rent/pages/CarForRent/CarForRent";
 
 
 
@@ -25,6 +26,7 @@ const Routers = () => {
       <Route path="/rentals" element={<Rentals />} />
       <Route path="/cars" element={<CarListing />} />
       <Route path="/cars/:slug" element={<CarDetails />} />
+      <Route path="/carforrent/:slug" element={<CarForRent />} />
       <Route path="/blogs" element={<AboutUs />} />
       <Route path="/blogs/:slug" element={<BlogDetails />} />
       <Route path="/contact" element={<Contact />} />
@@ -32,7 +34,7 @@ const Routers = () => {
       <Route path="/login" element={<Login/>}/>
       <Route path="/register" element={<Register/>}/>
       <Route path="/buycardetails/:slug" element={<BuyCarDetails/>}/>
-      <Route path="/carsforrent" element={<CarsForRent/>}/>
+      {/* <Route path="/carsforrent" element={<CarsForRent/>}/> */}
     </Routes>
   );
 };

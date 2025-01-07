@@ -2,23 +2,26 @@
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  margin: 10px 6rem;
+  gap: 2rem;
 }
 
 .listWrapper {
   width: 100%;
-  max-width: 1024px;
   display: flex;
   gap: 20px;
+  max-width: 1024px;
 }
 
 .listSearch {
   flex: 1;
-  background-color: #febb02;
+  background-color: rgb(1, 175, 166);
   padding: 10px;
   border-radius: 10px;
   position: sticky;
   top: 10px;
   height: max-content;
+  width: 40%;
 }
 
 .lsTitle{
@@ -33,6 +36,15 @@
   gap: 5px;
   margin-bottom: 10px;
 }
+
+.lsItem input::placeholder {
+  color: #2c2c2c; /* Adjust the color as desired */
+  font-style: italic;
+  opacity: 0.7;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
 
 .lsItem>label{
   font-size: 12px;
@@ -70,7 +82,7 @@
 
 .listSearch>button{
   padding: 10px;
-  background-color: #0071c2;
+  background-color: #000d6b;
   color: white;
   border: none;
   width: 100%;
@@ -79,5 +91,39 @@
 }
 
 .listResult {
-  flex: 3;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.datepicker span{
+  color: #2c2c2c;
+  font-style: italic;
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  .listWrapper {
+    flex-direction: column;
+  }
+
+  .listContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .listSearch {
+   width: 98%;
+  }
+
+  .listContainer {
+    margin: 10px;
+  }
 }

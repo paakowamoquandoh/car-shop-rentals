@@ -1,4 +1,4 @@
-import "./hotel.css";
+import "./carforrent.css";
 import Rent from "../../components/Rent/Rent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,27 +14,30 @@ import { SearchContext } from "../../context/searchContext";
 import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../../components/reserve/Reserve";
 
-const Hotel = () => {
+const CarForRent = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
-  const { data, loading, error } = useFetch(`http://localhost:8800/api/hotels/find/${id}`)
+  const { data, loading, error } = useFetch(`http://localhost:8800/api/carlist/find/${id}`)
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
 
+  console.log(data);
+  
+
   const { dates, options } = useContext(SearchContext);
 
-  const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
-  function dayDifference(date1, date2) {
-    const timeDiff = Math.abs(date2.getTime() - date1.getTime());
-    const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
-    return diffDays;
-  }
+  // const MILLISECONDS_PER_DAY = 1000 * 60 * 60 * 24;
+  // function dayDifference(date1, date2) {
+  //   const timeDiff = Math.abs(date2.getTime() - date1.getTime());
+  //   const diffDays = Math.ceil(timeDiff / MILLISECONDS_PER_DAY);
+  //   return diffDays;
+  // }
 
-  const days = dayDifference(dates[0].endDate, dates[0].startDate);
+  // const days = dayDifference(dates[0].endDate, dates[0].startDate);
   
 
   const handleOpen = (i) => {
@@ -126,13 +129,13 @@ const Hotel = () => {
                 <p className="hotelDesc">{data.desc}</p>
               </div>
               <div className="hotelDetailsPrice">
-                <h1>Perfect for a {days}-night stay!</h1>
+                <h1>Perfect for a 4-night stay!</h1>
                 <span>
                   Located in the real heart of Krakow, this property has an
                   excellent location score of 9.8!
                 </span>
                 <h2>
-  <b>${days * data.cheapestPrice * options.room}</b> ({days} nights)
+  <b>$322</b> (4 nights)
 </h2>
                 <button onClick={handleClick}>Reserve or Book Now!</button>
               </div>
@@ -145,4 +148,4 @@ const Hotel = () => {
   );
 };
 
-export default Hotel;
+export default CarForRent;

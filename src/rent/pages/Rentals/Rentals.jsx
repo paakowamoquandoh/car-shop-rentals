@@ -4,12 +4,12 @@ import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { format } from "date-fns";
 import { DateRange } from "react-date-range";
-import SearchItem from "../../components/searchItem/SearchItem";
 import useFetch from "../../hooks/useFetch";
+import SearchedCar from "../../components/searchItem/SearchedCar";
 
 const Rentals = () => {
   const location = useLocation();
-  const [destination, setDestination] = useState(location.state.destination);
+  const [destination, setDestination] = useState(location.state.location);
   const [dates, setDates] = useState(location.state.dates);
   const [openDate, setOpenDate] = useState(false);
   const [options, setOptions] = useState(location.state.options);
@@ -93,11 +93,11 @@ const Rentals = () => {
           </div>
           <div className="listResult">
           {loading ? (
-              "loading"
+              "Cars Loading..."
             ) : (
               <>
                 {data.map((item) => (
-                  <SearchItem item={item} key={item._id} />
+                  <SearchedCar item={item} key={item._id} />
                 ))}
               </>
             )}           
