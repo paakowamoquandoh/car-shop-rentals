@@ -12,6 +12,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import CarsForRent from "../components/CarsForRent/CarsForRent";
 import BuyCarDetails from "../pages/BuyCarDetails";
+import Rentals from "../rent/pages/Rentals/Rentals";
 
 
 
@@ -21,6 +22,7 @@ const Routers = () => {
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Home />} />
       <Route path="/rental" element={<Rental />} />
+      <Route path="/rentals" element={<Rentals />} />
       <Route path="/cars" element={<CarListing />} />
       <Route path="/cars/:slug" element={<CarDetails />} />
       <Route path="/blogs" element={<AboutUs />} />

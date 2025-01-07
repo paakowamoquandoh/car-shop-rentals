@@ -62,15 +62,24 @@ const Header = () => {
 
             <Col lg="6" md="6" sm="6">
               {client ? (
-                <div className="navLeft">
-                  <div className="userArea">
-                    <FontAwesomeIcon icon={faUser} />
-                    {client.clientname}
+                 <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
+                    <Link
+                      to="/login"
+                      className=" d-flex align-items-center gap-1"
+                    >
+                      <FontAwesomeIcon icon={faUser} />
+                      {client.clientname}
+                    </Link>
+
+                    <Link
+                      to="/register"
+                      className=" d-flex align-items-center gap-1"
+                    >
+                      <FontAwesomeIcon onClick={handleClick} icon={faSignOut} />
+                    </Link>
                   </div>
-                  <div>
-                    <FontAwesomeIcon onClick={handleClick} icon={faSignOut} />
-                  </div>
-                </div>
+        
+
               ) : (
                 
                   <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
@@ -179,34 +188,21 @@ const Header = () => {
                   </NavLink>
                 ))}
                 <div className="mobileMenu">
-                {client ? (
-                <div className="navLeft">
-                  <div className="userArea">
-                    <FontAwesomeIcon icon={faUser} />
-                    {client.clientname}
-                  </div>
-                  <div>
-                    <FontAwesomeIcon onClick={handleClick} icon={faSignOut} />
-                  </div>
-                </div>
-              ) : (                
-                <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
-                <Link
-                  to="/login"
-                  className=" d-flex align-items-center gap-1"
-                >
-                  <i class="ri-login-circle-line"></i> Login
-                </Link>
+                  <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
+                    <Link
+                      to="/login"
+                      className=" d-flex align-items-center gap-1"
+                    >
+                      <i class="ri-login-circle-line"></i> Login
+                    </Link>
 
-                <Link
-                  to="/register"
-                  className=" d-flex align-items-center gap-1"
-                >
-                  <i class="ri-user-line"></i> Register
-                </Link>
-              </div>
-              )}
-                 
+                    <Link
+                      to="/register"
+                      className=" d-flex align-items-center gap-1"
+                    >
+                      <i class="ri-user-line"></i> Register
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

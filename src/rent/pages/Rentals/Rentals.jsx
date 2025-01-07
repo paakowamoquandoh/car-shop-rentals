@@ -1,5 +1,4 @@
-import "./list.css";
-
+import "./rentals.css";
 import Rent from "../../components/Rent/Rent";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
@@ -8,7 +7,7 @@ import { DateRange } from "react-date-range";
 import SearchItem from "../../components/searchItem/SearchItem";
 import useFetch from "../../hooks/useFetch";
 
-const List = () => {
+const Rentals = () => {
   const location = useLocation();
   const [destination, setDestination] = useState(location.state.destination);
   const [dates, setDates] = useState(location.state.dates);
@@ -17,7 +16,7 @@ const List = () => {
   const [min, setMin] = useState(undefined);
   const [max, setMax] = useState(undefined);
 
-  const { data, loading, error, reFetch } = useFetch(`http://localhost:8800/api/hotels?city=${destination}&min=${min || 0}&max=${max || 999}`)
+  const { data, loading, error, reFetch } = useFetch(`http://localhost:8800/api/carslist?location=${destination}&min=${min || 0}&max=${max || 999}`)
   const handleClick = () => {
     reFetch()
   }
@@ -109,4 +108,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default Rentals;

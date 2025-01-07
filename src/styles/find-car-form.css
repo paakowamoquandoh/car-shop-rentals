@@ -7,6 +7,12 @@
   padding: 50px 35px;
 }
 
+.rentalText{
+  text-align: center;
+  font-weight: bold;
+  padding: 1rem;
+}
+
 .find__cars-left h2 {
   font-weight: 600;
   font-size: 2rem;

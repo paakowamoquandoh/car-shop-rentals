@@ -11,7 +11,7 @@ import BecomeDriverSection from "../components/UI/BecomeDriverSection";
 import Testimonial from "../components/UI/Testimonial";
 import BlogList from "../components/UI/BlogList";
 import Booking from "../components/BookingForm/BookingForm";
-import Rent from "../client/src/components/Rent/Rent";
+import Rent from "../rent/components/Rent/Rent";
 
 const Rental = () => {
   return (
@@ -23,13 +23,8 @@ const Rental = () => {
         <div className="hero__form">
           <Container>
             <Row className="form__row">
-              <Col lg="12" md="12" sm="12">
-                <div className="find__cars-left">
-                  <h2>Find your best car here</h2>
-                </div>
-              </Col>
-
-              <Col lg="12" md="12" sm="12">
+              <Col lg="12" md="12" sm="12" className="marginBottom">
+              <h2 className="rentalText">Find your best car here</h2>
                 <Rent/>
               </Col>
             </Row>
