@@ -33,7 +33,7 @@ const SearchedCar = ({ item }) => {
         </button>
 
         <button className=" w-50 searchCar__item-btn searchCar__btn-details">
-          <Link to={`/carforrent/${item._id}`}>Details</Link>
+          <Link to={`/cars/${item._id}`}>Details</Link>
         </button>
       </div>
     </div>

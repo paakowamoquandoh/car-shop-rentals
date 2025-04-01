@@ -151,6 +151,6 @@ function dayDifference(date1, date2) {
       {openModal && <Reserve setOpen={setOpenModal} hotelId={id}/>}
     </div>
   );
-};
+}; 
 
 export default CarForRent;
